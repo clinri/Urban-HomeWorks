@@ -9,7 +9,7 @@ public class Main {
          * Вывести в консоль элементы массива в обратном порядке, т.е. начиная с 66.
          */
         int[] array = {3, 87, 12, 98, 2, 4, 66};
-        System.out.println(Arrays.toString(sortDescending(array)));
+        System.out.println(Arrays.toString(reverse(array)));
 
         /**
          * 2. Дан произвольный массив чисел с плавающей точкой. Необходимо отсортировать его по убыванию.
@@ -25,15 +25,11 @@ public class Main {
         System.out.println(Arrays.toString(getEvenElements(array)));
     }
 
-    public static int[] sortDescending(int[] array) {
-        for (int i = 0; i < array.length; i++) {
-            for (int j = 0; j < array.length - 1; j++) {
-                if (array[j] < array[j + 1]) {
-                    int temp = array[j];
-                    array[j] = array[j + 1];
-                    array[j + 1] = temp;
-                }
-            }
+    public static int[] reverse(int[] array) {
+        for (int i = 0; i < array.length / 2; i++) {
+            int temp = array[i];
+            array[i] = array[array.length - 1 - i];
+            array[array.length - 1 - i] = temp;
         }
         return array;
     }
