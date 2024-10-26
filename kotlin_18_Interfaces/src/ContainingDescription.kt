@@ -1,0 +1,3 @@
+interface ContainingDescription {
+    fun getDescription()
+}
